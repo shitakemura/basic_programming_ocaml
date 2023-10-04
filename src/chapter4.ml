@@ -16,3 +16,25 @@ g 3 2 ;;
 
 let kyuyo x = kihonkyu + x * jikyu ;;
 kyuyo 25 + kyuyo 28 + kyuyo 31 ;;
+
+(* 4.3 関数の型 *)
+let f x = 3 * x ;;
+(* val f : int -> int = <fun> *)
+
+let g x y = x * x + y * y - 4 ;;
+(* val g : int -> int -> int = <fun> *)
+(* A -> B -> C は A -> (B -> C) *)
+
+(* 4.4 型推論と型チェック *)
+let f x = 3 * x ;;
+(* f 2.5 *)
+(* This expression has type float but an expression was expected of type int *)
+
+let f2 x = 3.0 *. x ;;
+f2 2.5 ;;
+
+(* Ocamlインタプリタは裏で型に関してふたつのことをしている。 *)
+(* 型推論 *)
+(* 型チェック *)
+
+
