@@ -37,4 +37,12 @@ f2 2.5 ;;
 (* 型推論 *)
 (* 型チェック *)
 
+(* 4.5 関数の実行方法 *)
+let jikyu = 950 ;;
+let kihonkyu = 100 ;;
+let kyuyo x = kihonkyu + x * jikyu ;;
+kyuyo 25 + kyuyo 28 + kyuyo 31 ;;
 
+(* 4.6 関数定義に対するデザインレシピ *)
+
+(* #use "kyuyo.ml" ;; *)
