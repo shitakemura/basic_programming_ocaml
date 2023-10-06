@@ -16,3 +16,9 @@ if 3 + 4 < 5 then 1 else 2 ;;
 (* 5.5 条件分岐に対するデザインレシピ *)
 
 (* #use "functions/abs_value.ml" ;; *)
+
+(* 5.6 真偽値を返す関数 *)
+
+(* #use "functions/kion.ml" ;; *)
+
+(* 5.7 条件分岐の実行方法 *)
