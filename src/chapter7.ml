@@ -5,3 +5,18 @@
 (3, true) ;;
 (3, "a", 3.14) ;;
 ((3, "a"), 3.14) ;;
+
+(* 7.2 パターンマッチ *)
+match (3, 5) with
+  (a, b) -> a + b ;;
+
+let add pair = match pair with
+  (a, b) -> a + b ;;
+add (3, 5) ;;
+
+let add (a, b) = a + b ;;
+
+(* 7.3 構造データに対するデザインレシピ *)
+(* #use "functions/add.ml" ;; *)
+
+(* 7.4 パターンマッチの実行方法 *)
