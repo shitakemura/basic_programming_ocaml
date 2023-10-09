@@ -26,3 +26,6 @@ match [1; 2; 3] with
 
 (* 9.4 再帰関数 *)
 (* #use "functions/contain_zero.ml" ;; *)
+
+(* 9.5 再帰関数に対するデザインレシピ *)
+(* # use "functions/sum.ml" ;; *)
