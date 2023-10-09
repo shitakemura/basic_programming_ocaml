@@ -23,3 +23,6 @@ match [] with
 match [1; 2; 3] with
     [] -> 0
   | first :: rest -> first ;;
+
+(* 9.4 再帰関数 *)
+(* #use "functions/contain_zero.ml" ;; *)
