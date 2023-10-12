@@ -31,3 +31,4 @@ match [1; 2; 3] with
 (* # use "functions/sum.ml" ;; *)
 
 (* 9.6 テンプレートの場合 *)
+(* # use "functions/count_A.ml" ;; *)
