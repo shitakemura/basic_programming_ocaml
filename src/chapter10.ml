@@ -13,3 +13,6 @@ let x = 3 in let y = 4 in x + y ;;
 
 (* 10.4 パターンマッチつき局所変数定義 *)
 (* # use "functions/shukei.ml" ;; *)
+
+(* 10.5 ふたつのリストを結合する関数 *)
+(* # use "functions/append.ml" ;; *)
