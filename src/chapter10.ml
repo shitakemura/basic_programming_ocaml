@@ -10,3 +10,6 @@
 let x = 2 in x + x ;;
 
 let x = 3 in let y = 4 in x + y ;;
+
+(* 10.4 パターンマッチつき局所変数定義 *)
+(* # use "functions/shukei.ml" ;; *)
