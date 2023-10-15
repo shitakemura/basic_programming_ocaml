@@ -16,3 +16,6 @@ let x = 3 in let y = 4 in x + y ;;
 
 (* 10.5 ふたつのリストを結合する関数 *)
 (* # use "functions/append.ml" ;; *)
+
+(* 10.6 ふたつの照準に並んだリストをマージする関数 *)
+(* # use "functions/merge.ml" ;; *)
