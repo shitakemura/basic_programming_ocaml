@@ -24,3 +24,8 @@ let test4 = hyouka {namae="asai"; tensuu=70; seiseki=""} = {namae="asai"; tensuu
 let test5 = hyouka {namae="asai"; tensuu=65; seiseki=""} = {namae="asai"; tensuu=65; seiseki="C"}
 let test6 = hyouka {namae="asai"; tensuu=60; seiseki=""} = {namae="asai"; tensuu=60; seiseki="C"}
 let test7 = hyouka {namae="asai"; tensuu=55; seiseki=""} = {namae="asai"; tensuu=55; seiseki="D"}
+
+(* 目的 : 学生のリストlstを受け取り成績を入れたリストを返す *)
+let rec map_hyouka lst = match lst with
+    [] -> []
+  | first :: rest -> hyouka first :: map_hyouka rest
