@@ -26,3 +26,17 @@ twice7 add3 ;;
 (* twice7 add3 *)
 (* add3 (add3 7) *)
 (* 13 *)
+
+(* 13.5 関数を返す関数 *)
+let twice f =
+  let g x = f (f x)
+  in g ;;
+
+let res_twice_add3 = twice add3 7 ;;
+
+let times2 x = x * 2 ;;
+let res_twice_times2 = twice times2 7 ;;
+
+let add6 = twice add3 ;;
+add6 8 ;;
+add6 9 ;;
