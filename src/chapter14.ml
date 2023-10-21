@@ -12,3 +12,6 @@ fun x -> x + 1 ;;
 
 let add1 = fun x -> x + 1 ;;
 add1 5 ;;
+
+(* 14.5 infix関数とprefix関数 *)
+(+) 3 5 ;;

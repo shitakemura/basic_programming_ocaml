@@ -19,6 +19,9 @@ let sum lst =
 let sum lst = 
   fold_right (fun first rest_result -> first + rest_result) lst 0
 
+(* prefix関数(+)を使用した場合 *)
+let sum lst = fold_right (+) lst 0
+
 (* length *)
 (* 目的 : firstは無視してrest_resultに1を加える *)
 let add_one first rest_result = 1 + rest_result
