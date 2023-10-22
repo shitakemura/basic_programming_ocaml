@@ -1,8 +1,18 @@
 (* 目的 : lstの中からnより小さい要素のみを取り出す *)
-let take_less n lst = []
+(* let rec take_less n lst = match lst with
+    [] -> []
+  | first :: rest -> if first < n
+                     then first :: take_less n rest
+                     else take_less n rest  *)
+let rec take_less n lst = List.filter(fun item -> item < n) lst
 
 (* 目的 : lstの中からnより大きい要素のみを取り出す *)
-let take_greater n lst = []
+(* let rec take_greater n lst = match lst with
+    [] -> []
+  | first :: rest -> if first > n
+                     then first :: take_greater n rest
+                     else take_greater n rest *)
+let rec take_greater n lst = List.filter(fun item -> item > n) lst
 
 (* 目的 : 受け取ったlstをクイックソートを使って昇順に整列する *)
 let rec quick_sort lst = match lst with
