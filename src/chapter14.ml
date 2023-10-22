@@ -15,3 +15,9 @@ add1 5 ;;
 
 (* 14.5 infix関数とprefix関数 *)
 (+) 3 5 ;;
+
+(* 14.6 完全数を求める関数 *)
+(* # use "functions/divisor.ml" ;; *)
+(* enumurate 5 ;; *)
+(* divisor 24 ;; *)
+(* perfect 10000 ;; *)
