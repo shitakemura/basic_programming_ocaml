@@ -5,4 +5,8 @@
 (* 15.2 部分問題の生成 *)
 
 (* 15.3 補助関数の作成 *)
-# use "functions/quick_sort.ml" ;;
+(* # use "functions/quick_sort.ml" ;; *)
+
+(* 15.4 停止性の判定 *)
+
+(* 15.5 一般の再帰に対するデザインレシピ *)
