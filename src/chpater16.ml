@@ -50,3 +50,5 @@ let reverse lst =
       [] -> result
     | first :: rest -> rev rest (first :: result)
   in rev lst []
+
+(* 16.5 プログラム作成のプロセス *)
