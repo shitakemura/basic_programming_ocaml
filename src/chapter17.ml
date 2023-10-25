@@ -24,3 +24,15 @@ let to_seireki nengou = match nengou with
   | Showa (n) -> n + 1925
   | Heisei (n) -> n + 1988 ;;
 to_seireki (Showa (55)) ;;
+
+(* 17.2 木 *)
+(* 木を表す型 *)
+type tree_t = Empty
+            | Leaf of int
+            | Node of tree_t * int * tree_t ;;
+Empty ;;
+Leaf (3) ;;
+Leaf (24) ;;
+Node (Empty, 7, Leaf (3)) ;;
+
+Node (Node (Empty, 7, Leaf (3)), 17, Leaf 24) ;;
