@@ -56,3 +56,26 @@ let test1 = sum_tree tree1 = 0 ;;
 let test2 = sum_tree tree2 = 3 ;;
 let test3 = sum_tree tree3 = 7;;
 let test4 = sum_tree tree4 = 15 ;;
+
+(* 17.4 2分探索木 *)
+
+(* 目的 : dataが2分探索木treeに含まれているかを調べる *)
+let rec search tree data = false
+
+(* 2分探索木の例 *)
+let tree1 = Empty
+let tree2 = Leaf (3)
+let tree3 = Node (Leaf (1), 2, Leaf (3))
+let tree4 = Node (Empty, 7, Leaf (9))
+let tree5 = Node (tree3, 6, tree4)
+
+(* テスト *)
+let test1 = search tree1 3 = false
+let test2 = search tree2 3 = true
+let test3 = search tree2 4 = false
+let test4= search tree5 6 = true
+let test5 = search tree5 2 = true
+let tree6 = search tree5 1 = true
+let test7 = search tree5 4 = false
+let test8 = search tree5 7 = true
+let test9 = search tree5 8 = false
