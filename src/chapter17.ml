@@ -104,3 +104,16 @@ let test2 = insert_tree (Leaf (3)) 2 = Node (Leaf (2), 3, Empty) ;;
 let test3 = insert_tree (Leaf (3)) 3 = Leaf (3) ;;
 let test4 = insert_tree (Leaf (3)) 4 = Node (Empty, 3, Leaf (4)) ;;
 let test5 = insert_tree tree5 4 = Node (Node (Leaf (1), 2, Node (Empty, 3, Leaf (4))), 6, Node (Empty, 7, Leaf (9))) ;;
+
+(* 17.5 多層型の宣言 *)
+
+(* 多層の木を表す型 *)
+type 'a tree_t = Empty
+                | Leaf of 'a
+                | Node of 'a tree_t * 'a * 'a tree_t ;;
+
+(* 2つの型の組みを引数にとる木 *)
+type ('a, 'b) tree_t =
+    Empty
+  | Leaf of 'a * 'b
+  | Node of ('a, 'b) tree_t * 'a * 'b * ('a, 'b) tree_t ;;
