@@ -56,3 +56,37 @@ let total_price yasai_list yaoya_list =
       None -> 0
     | Some (p) -> p ;;
 
+(* 18.4 例外処理専用の構文 *)
+raise Not_found ;;
+1 + raise Not_found ;;
+
+exception Urikire ;;
+raise Urikire ;;
+
+exception Urikire of string ;;
+raise (Urikire ("じゃがいも")) ;;
+
+(* 18.5 例外処理の実際 *)
+(* 売り切れを示す例外 *)
+exception Urikire ;;
+
+(* 目的 : itemの値段を調べる *)
+let rec price item yaoya_list = match yaoya_list with
+    [] -> raise Urikire
+  | (yasai, nedan) :: rest ->
+      if item = yasai then nedan
+                      else price item rest ;;
+
+(* 目的 : yasai_listを買ったときの値段の合計を調べる *)
+let total_price yasai_list yaoya_list =
+  let rec hojo yasai_list = match yasai_list with
+      [] -> 0
+    | first :: rest ->
+        price first yaoya_list + hojo rest
+  in try
+      hojo yasai_list
+    with Urikire -> 0 ;;
+
+total_price ["たまねぎ"; "にんじん"] yaoya_list ;;
+total_price ["たまねぎ"; "じゃがいも"; "にんじん"] yaoya_list ;;
+
