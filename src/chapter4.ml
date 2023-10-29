@@ -20,3 +20,9 @@ g 3 2 ;;
 let kyuyo x = kihonkyu + x * jikyu ;;
 
 kyuyo 25 + kyuyo 28 + kyuyo 31 ;;
+
+(* 4.3 関数の型 *)
+
+(* 4.4 型推論と型チェック *)
+let f2 x = 3.0 *. x ;;
+f2 2.5 ;;
