@@ -9,3 +9,22 @@ if false then 1 else 2 ;;
 
 if 1 < 2 then 3 else 4 ;;
 if 3 + 4 < 5 then 1 else 2 ;;
+
+(* 5.3 kyuyoの例 *)
+
+(* 時給（円） *)
+let jikyu = 950 ;;
+(* 基本給（円） *)
+let kihonkyu = 100 ;;
+(* 優遇時給（円） *)
+let yugu_jikyu = 980 ;;
+
+let kyuyo x =
+  if x < 30 then kihonkyu + x * jikyu
+            else kihonkyu + x * yugu_jikyu ;;
+
+(* テスト *)
+let test = kyuyo 31 = 30480 ;;
+
+(* 5.4 式としてのif文 *)
+let kyuyo x = kihonkyu + x * (if x < 30 then jikyu else yugu_jikyu) ;;
