@@ -33,3 +33,16 @@ let hyouka gakusei = match gakusei with
 hyouka {namae="asai"; tensuu=70; seiseki=""} ;;
 
 tsuuchi (hyouka {namae="asai"; tensuu=70; seiseki=""}) ;;
+
+(* 8.4 そのほかの記法 *)
+let asai = {namae = "asai"; tensuu = 70; seiseki = "B"} ;;
+asai.namae ;;
+asai.tensuu ;;
+asai.seiseki ;;
+
+(* 8.5 ユーザによる型定義 *)
+type gakusei_t = {
+  namae : string;
+  tensuu : int;
+  seiseki : string;
+} ;;
