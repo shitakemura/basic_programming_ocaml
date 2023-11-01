@@ -43,3 +43,17 @@ let test2 = contain_zero [0; 2] = true ;;
 let test3 = contain_zero [1; 2] = false ;;
 let test4 = contain_zero [1; 2; 3; 0; 5; 6; 7] = true ;;
 let test5 = contain_zero [1; 2; 3; 4; 5; 6; 7] = false ;;
+
+(* 9.5 再帰関数に対するデザインレシピ *)
+
+(* 目的 : 受け取ったリストlstの各要素の和を求める *)
+(* sum : int list -> list *)
+let rec sum lst = match lst with
+    [] -> 0
+  | first :: rest -> first + sum rest ;;
+
+(* テスト *)
+let test1 = sum [] = 0 ;;
+let test2 = sum [2] = 2 ;;
+let test3 = sum [1; 3] = 4 ;;
+let test4 = sum [1; 2; 3; 4; 5; 6; 7; 8; 9; 10] = 55 ;;
