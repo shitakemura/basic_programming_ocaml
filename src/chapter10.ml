@@ -25,3 +25,20 @@ let test5 = prefix [] = [] ;;
 let test6 = prefix [1] = [[1]] ;;
 let test7 = prefix [1; 2] = [[1]; [1; 2]] ;;
 let test8 = prefix [1; 2; 3; 4] = [[1]; [1; 2]; [1; 2; 3]; [1; 2; 3; 4]] ;;
+
+(* 10.2 リストの中の最小値を求める関数 *)
+
+(* 目的 : 受け取ったlstの中の最小値を返す *)
+(* minimum : int list -> int *)
+let rec minimum lst = match lst with
+    [] -> max_int
+  | first :: rest -> 
+      if first <= minimum rest 
+        then first 
+        else minimum rest ;;
+
+(* テスト *)
+let test1 = minimum [3] = 3 ;;
+let test2 = minimum [1; 2] = 1 ;;
+let test3 = minimum [3; 2] = 2 ;;
+let test4 = minimum [3; 2; 6; 4; 1; 8] = 1 ;;
