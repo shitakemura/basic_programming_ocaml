@@ -88,3 +88,15 @@ let map_sqrt lst = map sqrt lst ;;
 (* 目的 : 学生リストlstを受け取り成績を入れたリストを返す *)
 (* map_hyouka : gakusei_t list -> gakusei_t list *)
 let map_hyouka lst = map hyouka lst ;;
+
+(* 13.3 多相型と多相関数 *)
+
+(* 目的 : 受け取ったリストlstの長さを求める *)
+(* length : 'a list -> int *)
+let rec length lst = match lst with
+    [] -> 0
+  | first :: rest -> 1 + length rest ;;
+
+let is_zero n = n = 0 ;;
+
+map is_zero [2; 1; 0; -1; -2] ;;
