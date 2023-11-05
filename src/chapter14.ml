@@ -101,3 +101,27 @@ let sum lst =
   (* add_int : int -> int -> int *)
   let add_int first rest_result = first + rest_result
   in fold_right add_int lst 0 ;;
+
+(* 14.4 名前のない関数 *)
+fun x -> x + 1 ;;
+
+(fun x -> x + 1) 5 ;;
+
+let add1 = fun x -> x + 1 ;;
+
+let add1 x = x + 1 ;;
+
+(* 目的 : 受け取ったリストlstの各要素の和を求める *)
+(* sum : int list -> int *)
+let sum lst =
+  fold_right (fun first rest_result -> first + rest_result) lst 0 ;;
+
+(* 目的 : 受け取ったlstの長さを求める *)
+(* length : 'a list -> int *)
+let length lst =
+  fold_right (fun first rest_result -> 1 + rest_result) lst 0 ;;
+
+(* 目的 : lst1とlst2を受け取りそれらを結合したリストを返す *)
+(* append : 'a list -> 'a list -> 'a list *)
+let append lst1 lst2 =
+  fold_right (fun first rest_result -> first :: rest_result) lst1 lst2 ;;
