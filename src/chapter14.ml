@@ -91,3 +91,13 @@ let cons first rest_result = first :: rest_result ;;
 (* 目的 : lst1とlst2を受け取りそれらを結合したリストを返す *)
 (* append : 'a list -> 'a list -> 'a list *)
 let append lst1 lst2 = fold_right cons lst1 lst2 ;;
+
+(* 14.3 局所関数定義 *)
+
+(* 目的 : 受け取ったリストlstの各要素の和を求める *)
+(* sum : int list -> int *)
+let sum lst =
+  (* 目的 : firstとrest_resultを加える *)
+  (* add_int : int -> int -> int *)
+  let add_int first rest_result = first + rest_result
+  in fold_right add_int lst 0 ;;
