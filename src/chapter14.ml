@@ -125,3 +125,14 @@ let length lst =
 (* append : 'a list -> 'a list -> 'a list *)
 let append lst1 lst2 =
   fold_right (fun first rest_result -> first :: rest_result) lst1 lst2 ;;
+
+(* 14.5 infix関数とprefix関数 *)
+
+(+) 3 5 ;;
+
+(* 目的 : 受け取ったリストlstの各要素の和を求める *)
+(* sum : int list -> int *)
+let sum lst =
+  fold_right (fun first rest_result -> first + rest_result) lst 0 ;;
+
+let sum lst = fold_right (+) lst 0 ;;
