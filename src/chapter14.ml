@@ -136,3 +136,25 @@ let sum lst =
   fold_right (fun first rest_result -> first + rest_result) lst 0 ;;
 
 let sum lst = fold_right (+) lst 0 ;;
+
+(* 14.6 完全数を求める関数 *)
+
+(* 目的 : nから1までのリストを作る *)
+(* enumerate : int -> int list *)
+let rec enumerate n =
+  if n = 0 then [] else n :: enumerate (n - 1) ;;
+
+enumerate 5 ;;
+
+(* 目的 : nの約数のリストを返す *)
+(* divisor : int -> int list *)
+let divisor n = List.filter(fun x -> n mod x = 0) (enumerate n) ;;
+
+divisor 24 ;;
+
+(* 目的 : m以下の完全数のリストを返す *)
+(* perfect : int -> int list *)
+let perfect m =
+  List.filter (fun n -> List.fold_right (+) (divisor n) 0 - n = n) (enumerate m) ;;
+
+perfect 10000 ;;
