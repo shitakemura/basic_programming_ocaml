@@ -45,4 +45,29 @@ let total_distance lst =
     | {kyori = k; total = t} :: rest ->
         {kyori = k; total = total0 +. k} :: hojo rest (total0 +. k)
   in hojo lst 0.0 ;;
- 
+
+(* 16.3 アキュムレータの活用 *)
+
+(* 目的 : 与えられたリストを逆順にして返す *)
+(* reverse : 'a list -> 'a list *)
+let rec reverse lst = match lst with
+    [] -> []
+  | first :: rest -> [] ;;
+
+(* 目的 : (lstの逆順のリスト) @ resultを返す *)
+(* resultはこれまでの要素を逆順にしたリストを示す *)
+let rec rev lst result = match lst with
+    [] -> result
+  | first :: rest -> rev rest (first :: result);;
+
+(* 目的 : 与えられたリストを逆順にして返す *)
+(* reverse : 'a list -> 'a list *)
+let reverse lst =
+  (* 目的 : (lstの逆順のリスト) @ resultを返す *)
+  (* resultはこれまでの要素を逆順にしたリストを示す *)
+  let rec rev lst result = match lst with
+      [] -> result
+    | first :: rest -> rev rest (first :: result)
+  in rev lst [] ;;
+
+(* 16.5 プログラム作成のプロセス *)
