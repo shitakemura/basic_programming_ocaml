@@ -92,3 +92,27 @@ let rec quick_sort lst =
     | first :: rest -> quick_sort (take_less first rest)
                        @ [first]
                        @ quick_sort (take_greater first rest) ;;
+
+(* 15.4 停止性の判定 *)
+
+(* 目的 : 級数の第n項の値を求める *)
+(* dai_n_kou : int -> float *)
+let rec dai_n_kou n =
+  if n = 0 then 1.0
+           else dai_n_kou (n - 1) /. float_of_int n ;;
+
+(* 目的 : eの近似値を求める *)
+(* e : int -> float *)
+let rec e n =
+  if dai_n_kou n < 0.00001
+  then dai_n_kou n
+  else dai_n_kou n +. e (n - 1) ;;
+ 
+let rec e n =
+  let d = dai_n_kou n in
+  if d < 0.00001 then d
+                 else d +. e (n + 1) ;;
+
+(* 15.5 一般の再帰に対するデザインレシピ *)
+
+(* 15.7 例の作成とデバッグについて *)
