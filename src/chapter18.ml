@@ -88,3 +88,13 @@ let rec total_price yasai_list yaoya_list = match yasai_list with
     [] -> 0
   | first :: rest ->
       price first yaoya_list + total_price rest yaoya_list ;;
+
+(* 18.4 例外処理専用の構文 *)
+raise Not_found ;;
+1 + raise Not_found ;;
+
+exception Urikire ;;
+raise Urikire ;;
+
+exception Urikire of string ;;
+raise (Urikire ("じゃがいも")) ;;
