@@ -27,3 +27,15 @@ let rec price item yaoya_list = match yaoya_list with
 
 price "トマト" yaoya_list ;;
 price "じゃがいも" yaoya_list ;;
+
+(* 18.2 オプション型を使った例外処理 *)
+
+(* 目的 : yasai_listを買ったときの値段の合計を調べる *)
+(* total_price : string list -> (string * int) list -> int *)
+
+let rec total_price yasai_list yaoya_list = match yasai_list with
+    [] -> 0
+  | first :: rest ->
+    match price first yaoya_list with
+        None -> total_price rest yaoya_list
+      | Some (p) -> p + total_price rest yaoya_list ;;
