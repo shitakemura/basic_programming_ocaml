@@ -147,3 +147,5 @@ type ('a, 'b) tree_t =
     Empty
   | Leaf of 'a * 'b
   | Node of ('a, 'b) tree_t * 'a * 'b * ('a, 'b) tree_t ;;
+
+(* 17.6 停止性 *)
