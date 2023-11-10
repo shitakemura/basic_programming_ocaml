@@ -133,3 +133,17 @@ let rec insert_tree tree data = match tree with
     else if data < n then Node (insert_tree t1 data, n, t2)
     else Node (t1, n, insert_tree t2 data) ;;
 
+(* 17.5 多相型の宣言 *)
+
+(* 多層の木を表す型 *)
+type 'a tree_t = Empty
+               | Leaf of 'a
+               | Node of 'a tree_t * 'a * 'a tree_t ;;
+
+search ;;
+insert_tree ;;
+
+type ('a, 'b) tree_t =
+    Empty
+  | Leaf of 'a * 'b
+  | Node of ('a, 'b) tree_t * 'a * 'b * ('a, 'b) tree_t ;;
