@@ -128,3 +128,29 @@ let total_price yasai_list yaoya_list =
 
 total_price ["たまねぎ"; "にんじん"] yaoya_list ;;
 total_price ["たまねぎ"; "じゃがいも"; "にんじん"] yaoya_list ;;
+
+(* 18.6 例外処理を使ったプログラム *)
+
+(* 目的 : lstの中の整数をすべて掛け合わせる *)
+(* times : int list -> int *)
+let rec times lst = match lst with
+    [] -> 0
+  | first :: rest -> first * times rest ;;
+
+(* 0がみつかったことを示す例外 *)
+exception Zero ;;
+
+(* 目的 : lstの中の整数をすべて掛け合わせる *)
+(* times : int lst -> int *)
+let times lst = 
+  (* 目的 : lstの中の整数をすべて掛け合わせる *)
+  (* 0をみつけたら例外Zeroを起こす *)
+  (* hojo : int list -> int *)
+  let rec hojo lst = match lst with
+      [] -> 0
+    | first :: rest -> 
+        if first = 0 then raise Zero
+                     else first * hojo rest
+  in try
+    hojo lst
+  with Zero -> 0 ;;
